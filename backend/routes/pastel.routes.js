@@ -10,7 +10,8 @@ var multipartyMiddleWare=multiparty({uploadDir:'./uploads'});
 // guardar tipo
 router.post('/pastel',pastelController.guardarPastel);
 // obtener tipo por nombre
-router.get('/pastel/:nombre',pastelController.obtenerPastelPorNombre)
+router.get('/pastelN/:nombre',pastelController.obtenerPastelPorNombre)
+router.get('/pastel/:id',pastelController.obtenerPastelPorId);
 // obtener tipos
 router.get('/pastel',pastelController.obtenerPasteles);
 // actualizar tipo por nombre

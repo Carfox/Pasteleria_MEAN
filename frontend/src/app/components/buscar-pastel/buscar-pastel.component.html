@@ -1,0 +1,14 @@
+<div style="display:flex; flex-wrap:wrap; width:95%;" class="m-auto">
+    <div *ngFor="let pastel of pasteles"  class="pastel-box" style="width:250px">
+        <a [routerLink]="['/pasteles',pastel._id]">
+            <div>
+                <h1>Nombre: {{pastel.nombre}}</h1>
+                <h3>Tamanio: {{pastel.tamanio}}</h3>
+                <h3>Porciones: {{pastel.porciones}}</h3>
+                <h3>Sabor: {{pastel.sabor}}</h3>
+                <h3>Precio: {{pastel.precio}}</h3>
+                <img src="{{url+'get-imagen/'+pastel.imagen}}" *ngIf="pastel.imagen" width="100px">
+            </div>
+        </a>
+    </div>
+</div>

@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'buscar-pastel/:nombre',component:BuscarPastelComponent},
   {path:'pasteles',component:PastelesComponent},
-  {path:'pasteles/:i',component:DetallePastelComponent},
+  {path:'pasteles/:id',component:DetallePastelComponent},
   {path:'crear-pastel',component:CrearPastelComponent},
   {path:'contacto',component:ContactoComponent},
   {path:'**',component:HomeComponent},

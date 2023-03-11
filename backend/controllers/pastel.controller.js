@@ -24,7 +24,18 @@ var controller={
     },
     obtenerPastelPorNombre:function(req,res){
         var nombreBuscar=req.params.nombre;
-        Pastel.findOne({nombre:nombreBuscar})
+        Pastel.find({nombre:nombreBuscar})
+        .then(result => {
+            if (!result) return res.status(404).send({message:'No se encontraron datos con los valores proporcionados'});
+            return res.status(200).send({result});
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    },
+    obtenerPastelPorId:function(req,res){
+        var idBuscar=req.params.id;
+        Pastel.findById(idBuscar)
         .then(result => {
             if (!result) return res.status(404).send({message:'No se encontraron datos con los valores proporcionados'});
             return res.status(200).send({result});

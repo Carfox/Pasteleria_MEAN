@@ -1,1 +1,64 @@
-<p>detalle-pastel works!</p>
+
+    <div style="display:flex; flex-wrap:wrap">
+        <div style="width:50%; display:flex; flex-wrap:wrap;">
+            <div *ngFor="let pastel of pasteles"  class="pastel-box" style="width:300px;">
+                <a [routerLink]="['/pasteles',pastel._id]">
+                    <div>
+                        <h1>Nombre: {{pastel.nombre}}</h1>
+                        <h3>Tamanio: {{pastel.tamanio}}</h3>
+                        <h3>Porciones: {{pastel.porciones}}</h3>
+                        <h3>Sabor: {{pastel.sabor}}</h3>
+                        <h3>Precio: {{pastel.precio}}</h3>
+                        <img src="{{url+'get-imagen/'+pastel.imagen}}" *ngIf="pastel.imagen" style="width:50px;">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div style="width:50%">
+            <form #pastelForm="ngForm" (ngSubmit)="actualizarPastelPorId(pastelForm)">
+                <div>
+                    <span>Nombre: </span>
+                    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="pastel.nombre">
+                </div>
+                <div>
+                    <span>Sabor: </span>
+                    <select name="sabor" #sabor="ngModel" [(ngModel)]="pastel.sabor">
+                        <option value="Mora" selected>Mora</option>
+                        <option value="Chocolate">Chocolate</option>
+                        <option value="Vainilla">Vainilla</option>
+                        <option value="Fresa">Fresa</option>
+                        <option value="Limon">Limon</option>
+                        <option value="3 Leches">3 Leches</option>
+                    </select>
+                </div>
+                <div>
+                    <span>Tamanio: </span>
+                    <select name="tamanio" #tamanio="ngModel" [(ngModel)]="pastel.tamanio">
+                        <option value="Grande" selected>Grande</option>
+                        <option value="Mediano">Mediano</option>
+                        <option value="Pequeño">Pequeño</option>
+                    </select>
+                </div>
+                <div>
+                    <span>Porciones: </span>
+                    <input type="number" name="porciones" #porciones="ngModel" [(ngModel)]="pastel.porciones">
+                </div>
+                <div>
+                    <span>Precio: </span>
+                    <input type="number" name="precio" #precio="ngModel" [(ngModel)]="pastel.precio">
+                </div>
+                <div>
+                    <span>Imagen: </span>
+                    <span *ngIf="pastel.imagen" style="float:none;">
+                        <img src="{{url+'get-imagen/'+pastel.imagen}}" style="width:50px;" alt="">
+                    </span>
+                    <input type="file" #archivoImagen placeholder="Seleccionar imagen" (change)="imagenChangeEvent($event);">            
+                </div>
+                <div>
+                    <input type="submit" [disabled]="!pastelForm.form.valid" value="GUARDAR">
+                </div>
+            </form>
+            <button class="btn btn-primary" (click)="eliminarPastelPorId()">ELIMINAR</button>
+        </div>
+        
+    </div>

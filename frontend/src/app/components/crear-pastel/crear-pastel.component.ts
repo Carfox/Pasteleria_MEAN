@@ -42,7 +42,7 @@ export class CrearPastelComponent implements OnInit{
           if(this.archivosParaCargar){
             this._cargarService.peticionRequest(this.url+'subir-imagen/'+response.result._id,[],this.archivosParaCargar,'imagen')
             .then((result:any)=>{
-              //console.log(result);
+              console.log(result);
               //this.libroGuardar=result.response;
               //this.status='success';
               //console.log(result.response.result._id);
