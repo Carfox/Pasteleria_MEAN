@@ -4,7 +4,7 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">
-                  <h5 class="card-title">Selecciona las caracteristicas del pastel</h5>
+                  <h5 class="card-title">Ingrese las caracteristicas del pastel</h5>
                 </div>
                 <div class="card-body">
                   <form #pastelForm="ngForm" (ngSubmit)="guardarPastel(pastelForm)">
@@ -40,7 +40,7 @@
                       <input type="number" #porciones="ngModel" [(ngModel)]="pastel.porciones" class="form-control" id="inputPorciones" name="porciones" placeholder="Ingrese las porciones">
                     </div>
                     
-                  </form>
+                  
                   <!-- Ingreso de Precio -->
                   <div class="form-group">
                     <label for="inputPrecio">Precio</label>
@@ -55,9 +55,9 @@
                       </span>
                       <input type="file" #archivoImagen placeholder="Seleccionar imagen" (change)="imagenChangeEvent($event);" class="form-control" id="productImage" name="productImage">
                     </div>
-                    <button [disabled]="!pastelForm.form.valid" value="GUARDAR" type="submit" class="btn btn-primary">Guardar Pastel</button>
-
-                </div>
+                    <button type="submit" [disabled]="!pastelForm.form.valid" value="GUARDAR" class="btn btn-primary">Guardar Pastel</button>
+                  </form>
+                </div>  
               </div>
               
         </div>
