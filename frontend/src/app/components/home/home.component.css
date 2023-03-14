@@ -1,0 +1,15 @@
+.carousel-container {
+    width: 400px;
+
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .carousel-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container-fluid{
+    padding: 20px;
+  }

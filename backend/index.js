@@ -1,19 +1,14 @@
 'use strict'
-//console.log("1");
 var mongoose=require('mongoose');
-//console.log("2");
 var port='3600';
-//console.log("3");
 mongoose.promise=global.Promise;
-//console.log("4");
 mongoose.set("strictQuery",false);
 var app=require('./app');
-//console.log("5");
-mongoose.connect('mongodb://127.0.0.1:27017/pasteleria')
-.then(()=>{
-    console.log("Conexion establecida con la bdd");
-    app.listen(port,()=>{
-        console.log("Conexion establecida en el url: localhost:3600");
-    })
-})
-.catch(err=>console.log(err))
+const DB_URI = 'mongodb://20.42.112.173:27017/pasteleria';
+mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Conectado a la base de datos Azure');
+  })
+  .catch((error) => {
+    console.log('Error al conectar a la base de datos:', error.message);
+  });

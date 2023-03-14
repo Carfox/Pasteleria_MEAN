@@ -35,7 +35,6 @@ export class PastelService{
         return this._http.put(this.url+'pastel',params,{headers:headers});
     }
     getPastelPorId(id:String):Observable<any>{
-        //let params=JSON.stringify(id);
         let headers=new HttpHeaders().set('Content-Type','application/json');
         return this._http.get(this.url+'pastel/'+id,{headers:headers});
     }

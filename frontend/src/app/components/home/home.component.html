@@ -1,1 +1,16 @@
-<p>home works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 ">
+          <div class="carousel-container">
+            <ngb-carousel>
+              <ng-template ngbSlide *ngFor="let image of images">
+                <img [src]="image.src" [alt]="image.alt" class="img">
+              </ng-template>
+            </ngb-carousel>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text-center mt-2">{{ activeSlideAlt }}</div>
+        </div>
+    </div>
+</div>
