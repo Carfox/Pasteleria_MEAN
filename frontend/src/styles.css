@@ -1,4 +1,5 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Raleway:wght@300&family=Roboto+Slab&display=swap');
 
 #content{
     min-height:500px;

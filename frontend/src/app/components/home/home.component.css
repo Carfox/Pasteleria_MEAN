@@ -1,8 +1,8 @@
 .carousel-container {
     width: 400px;
-
     margin: 0 auto;
     text-align: center;
+    padding: 20px;
   }
   
   .carousel-container img {
@@ -12,4 +12,37 @@
 
   .container-fluid{
     padding: 20px;
+  }
+
+  .home-intro{
+    margin-top:45px;
+  }
+
+  p, h3, h2{
+    color: #7f7f7f;
+  }
+
+  p{
+    font-family: 'Nunito', sans-serif;
+    font-style: italic;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  h2{
+    font-family: 'Roboto Slab', serif;
+
+  }
+
+  h3{
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .carousel-caption{
+    position: absolute;
+    right: -25px;
+  }
+
+  .prompt{
+    margin-top: 10%;
   }

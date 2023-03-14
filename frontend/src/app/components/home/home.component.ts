@@ -5,6 +5,7 @@ import { NgbSlideEvent } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
+  
   styleUrls: ['./home.component.css'],
   providers: [NgbCarouselConfig]
 })
@@ -18,18 +19,22 @@ export class HomeComponent {
   }
 
   images = [
-    {src: '../../../assets/images/slide-1.jpg', alt: 'Slide 1', id:'slide-1'},
-    {src: '../../../assets/images/slide-2.jpg', alt: 'Slide 2', id:'slide-2'},
-    {src: '../../../assets/images/slide-3.jpg', alt: 'Slide 3', id:'slide-3'}
-  ]
+    { src: '../../../assets/images/slide-1.jpg', alt: 'Pastel de Mora', description: 'Si buscas algo un poco más frutal, nuestro pastel de mora es la opción perfecta. Elaborado con moras frescas y una masa suave y esponjosa, este pastel es un verdadero placer para el paladar. ¡No te lo puedes perder!' },
+    { src: '../../../assets/images/slide-2.jpg', alt: 'Pastel de Chocolate', description: 'Un clásico de la repostería, nuestro pastel de chocolate es una deliciosa opción para los amantes del chocolate. Con una textura esponjosa y suave, y un sabor intenso a chocolate, este pastel es perfecto para cualquier ocasión.' },
+    { src: '../../../assets/images/slide-3.jpg', alt: 'Tres Chocolates', description: 'Si eres un verdadero amante del chocolate, nuestro pastel bañado en chocolate es para ti. Con una masa suave y esponjosa, este pastel es bañado en una deliciosa capa de chocolate derretido, que lo hace irresistible. ¡Una deliciosa opción para los más golosos!' }
+  ];
 
-
-  activeSlideAlt: string = '';
+  activeSlide = { alt: '', description: '' };
+  descriptionOut: string = '';
 
   onSlide(event: NgbSlideEvent) {
-    let currentSlideId = event.current.toString();
-    let currentSlideElement = document.getElementById(currentSlideId);
-    this.activeSlideAlt = currentSlideElement?.getAttribute('alt') ?? '';
+    const currentSlideId = event.current.toString();
+    const currentSlideElement = document.getElementById(currentSlideId);
+    const alt = currentSlideElement?.getAttribute('alt') ?? '';
+    const description = this.images[parseInt(event.current)].description;
+    this.activeSlide = { alt, description };
+    this.descriptionOut = currentSlideElement?.getAttribute('description') ?? '';
   }
+
 }
 
