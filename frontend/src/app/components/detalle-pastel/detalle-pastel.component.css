@@ -1,0 +1,22 @@
+.container-fluid{
+    padding: 20px;
+}
+
+.card-title{
+    color: #c75888 !important;
+}
+
+p{
+    font-family: 'Nunito', sans-serif;
+    font-size: 1em;
+
+  }
+  p, h3, h2{
+    color: #7f7f7f;
+  }
+  li{
+    font-family: 'Roboto Slab', serif;
+  }
+.card{
+    margin: 10px;
+}

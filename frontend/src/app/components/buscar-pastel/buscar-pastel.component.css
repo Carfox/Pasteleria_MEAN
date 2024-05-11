@@ -1,0 +1,23 @@
+.card {
+    margin: 1rem;
+  }
+  
+  p{
+    font-family: 'Nunito', sans-serif;
+    font-size: 1em;
+
+  }
+  p, h3, h2{
+    color: #7f7f7f;
+  }
+  li{
+    font-family: 'Roboto Slab', serif;
+  }
+
+  h3{
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .card-title{
+    color: #c75888 !important;
+}

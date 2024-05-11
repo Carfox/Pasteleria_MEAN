@@ -3,7 +3,6 @@ var express=require('express');
 var router=express.Router();
 var pastelController=require('../controllers/pastel.controller');
 const pastel = require('../models/pastel');
-
 var multiparty=require('connect-multiparty');
 var multipartyMiddleWare=multiparty({uploadDir:'./uploads'});
 
@@ -18,7 +17,6 @@ router.get('/pastel',pastelController.obtenerPasteles);
 router.put('/pastel',pastelController.actualizarPastelPorId);
 // eliminar tipo por nombre
 router.delete('/pastel/:id',pastelController.eliminarPastelPorId);
-
 //agregar una imagen
 router.post('/subir-imagen/:id',multipartyMiddleWare,pastelController.uploadImage);
 //recuperar una imagen

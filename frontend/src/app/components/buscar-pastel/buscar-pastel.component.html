@@ -1,3 +1,21 @@
+<div  style="display: flex; flex-wrap: wrap;" class="m-auto">
+    <div *ngFor="let pastel of pasteles"  class="pastel-box" style="width:250px">
+    <div class="card ">
+        <img class="card-img-top" src="{{url+'get-imagen/'+pastel.imagen}}" *ngIf="pastel.imagen" alt="{{pastel.nombre}}">
+        <div class="card-body">
+          <h5 class="card-title">{{pastel.nombre}}</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Tamaño: <p>{{pastel.tamanio}}</p></li>
+            <li class="list-group-item">Porciones: <p>{{pastel.porciones}}</p></li>
+            <li class="list-group-item">Sabor: <p> {{pastel.sabor}}</p></li>
+            <li class="list-group-item">Precio: <p> {{pastel.precio}}</p></li>
+          </ul>
+          <a [routerLink]="['/pasteles',pastel._id]"> <button class="btn btn-primary">Editar</button> </a>
+        </div>
+        </div>
+      </div>
+    </div>
+<!-- 
 <div style="display:flex; flex-wrap:wrap; width:95%;" class="m-auto">
     <div *ngFor="let pastel of pasteles"  class="pastel-box" style="width:250px">
         <a [routerLink]="['/pasteles',pastel._id]">
@@ -12,3 +30,4 @@
         </a>
     </div>
 </div>
+ -->

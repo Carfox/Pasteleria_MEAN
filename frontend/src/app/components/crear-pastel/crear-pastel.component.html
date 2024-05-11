@@ -1,45 +1,66 @@
-<div>
-    <form #pastelForm="ngForm" (ngSubmit)="guardarPastel(pastelForm)">
-        <div>
-            <span>Nombre: </span>
-            <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="pastel.nombre">
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title">Ingrese las caracteristicas del pastel</h5>
+                </div>
+                <div class="card-body">
+                  <form #pastelForm="ngForm" (ngSubmit)="guardarPastel(pastelForm)">
+                    <div class="form-group">
+                       <!-- Ingreso de nombre -->
+                      <label for="inputNombre">Nombre</label>
+                      <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="pastel.nombre" class="form-control" placeholder="Ingrese el nombre" id="inputNombre">
+                    </div>
+                    <!-- Ingreso de Sabor  -->
+                    <div class="form-group">
+                      <label for="inputSabor">Sabor:</label>
+                      <select name="sabor" #sabor="ngModel" [(ngModel)]="pastel.sabor" class="form-control" id="inputSabor">
+                        <option value="Mora" selected>Mora</option>
+                        <option value="Chocolate">Chocolate</option>
+                        <option value="Vainilla">Vainilla</option>
+                        <option value="Fresa">Fresa</option>
+                        <option value="Limon">Limon</option>
+                        <option value="3 Leches">3 Leches</option>
+                    </select>
+                    </div>
+                      <!-- Ingreso de Tamaño -->
+                      <div class="form-group">
+                        <label for="tamanio">Tamaño:</label>
+                        <select name="tamanio" #tamanio="ngModel" [(ngModel)]="pastel.tamanio" class="form-control" placeholder="Ingrese el tamaño">
+                          <option value="Grande" selected>Grande</option>
+                          <option value="Mediano">Mediano</option>
+                          <option value="Pequeño">Pequeño</option>
+                      </select>
+                      </div>
+                    <!-- Ingresio de porciones -->
+                    <div class="form-group">
+                      <label for="inputPorciones">Porciones</label>
+                      <input type="number" #porciones="ngModel" [(ngModel)]="pastel.porciones" class="form-control" id="inputPorciones" name="porciones" placeholder="Ingrese las porciones">
+                    </div>
+                    
+                  
+                  <!-- Ingreso de Precio -->
+                  <div class="form-group">
+                    <label for="inputPrecio">Precio</label>
+                    <input type="text" name="precio" #precio="ngModel" [(ngModel)]="pastel.precio" class="form-control" id="inputPrecio" placeholder="Ingrese el precio">
+                  </div>
+                     <!-- Ingreso de Imagen -->
+
+                     <div class="mb-3">
+                      <label for="productImage" class="form-label">Imagen del producto</label>
+                      <span *ngIf="pastel.imagen" style="float:none;">
+                        <img src="{{url+'get-imagen/'+pastel.imagen}}" style="width:100px;" alt="">
+                      </span>
+                      <input type="file" #archivoImagen placeholder="Seleccionar imagen" (change)="imagenChangeEvent($event);" class="form-control" id="productImage" name="productImage">
+                    </div>
+                    <button type="submit" [disabled]="!pastelForm.form.valid" value="GUARDAR" class="btn btn-primary">Guardar Pastel</button>
+                  </form>
+                </div>  
+              </div>
+              
         </div>
-        <div>
-            <span>Sabor: </span>
-            <select name="sabor" #sabor="ngModel" [(ngModel)]="pastel.sabor">
-                <option value="Mora" selected>Mora</option>
-                <option value="Chocolate">Chocolate</option>
-                <option value="Vainilla">Vainilla</option>
-                <option value="Fresa">Fresa</option>
-                <option value="Limon">Limon</option>
-                <option value="3 Leches">3 Leches</option>
-            </select>
-        </div>
-        <div>
-            <span>Tamanio: </span>
-            <select name="tamanio" #tamanio="ngModel" [(ngModel)]="pastel.tamanio">
-                <option value="Grande" selected>Grande</option>
-                <option value="Mediano">Mediano</option>
-                <option value="Pequeño">Pequeño</option>
-            </select>
-        </div>
-        <div>
-            <span>Porciones: </span>
-            <input type="number" name="porciones" #porciones="ngModel" [(ngModel)]="pastel.porciones">
-        </div>
-        <div>
-            <span>Precio: </span>
-            <input type="number" name="precio" #precio="ngModel" [(ngModel)]="pastel.precio">
-        </div>
-        <div>
-            <span>Imagen: </span>
-            <span *ngIf="pastel.imagen" style="float:none;">
-                <img src="{{url+'get-imagen/'+pastel.imagen}}" style="width:100px;" alt="">
-            </span>
-            <input type="file" #archivoImagen placeholder="Seleccionar imagen" (change)="imagenChangeEvent($event);">            
-        </div>
-        <div>
-            <input type="submit" [disabled]="!pastelForm.form.valid" value="GUARDAR">
-        </div>
-    </form>
+        <div class="col-lg-3"></div>
+    </div>
 </div>

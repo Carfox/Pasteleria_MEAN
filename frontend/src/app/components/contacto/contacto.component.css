@@ -1,0 +1,16 @@
+.contact-body{
+    margin: 25px;
+}
+
+h3, .bi {
+    color: #D74F89;
+}
+
+p, h4 {
+    color: #7F7F7F
+}
+
+form{
+    text-align: left;
+    color: #7F7F7F
+}

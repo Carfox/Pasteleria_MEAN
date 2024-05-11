@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { CrearPastelComponent } from './components/crear-pastel/crear-pastel.component';
 import { BuscarPastelComponent } from './components/buscar-pastel/buscar-pastel.component';
 import { DetallePastelComponent } from './components/detalle-pastel/detalle-pastel.component';
@@ -23,4 +22,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
+
 export class AppRoutingModule { }

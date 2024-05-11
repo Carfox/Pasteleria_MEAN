@@ -1,0 +1,26 @@
+
+  
+.footer{
+    background-color:  #1f252c;
+    color: #C9C9C9;
+}
+
+.footer:visited, .footer:link{
+    color:#c9c9c9 !important;
+}
+
+a:hover{
+    background-color: #c9c9c9;
+    color: #1f252c;
+    text-decoration: solid;
+}
+.logo{
+    padding-top: 40px;
+}
+.footer-content{
+    padding-left: 10%;
+}
+ul{
+    padding-left: -10px ;
+}
+

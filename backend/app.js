@@ -6,12 +6,6 @@ var sessions=require('express-session');
 const cookieParser = require('cookie-parser');
 const oneDay = 1000 * 60 * 60 * 24;
 var pastelRoutes=require('./routes/pastel.routes');
-// var tipoRoutes=require('./routes/tipo.routes');
-// var usuarioRoutes=require('./routes/usuario.routes');
-// var ventaRoutes=require('./routes/venta.routes');
-//var cors = require('cors');
-
-//app.use(cors());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
@@ -44,16 +38,6 @@ app.use(sessions({
     resave: false
 }));
 app.use(cookieParser());
-//rutas
-/*
-app.get('/',(req,res)=>{
-    res.status(456).send(
-        '<h1>Hola, Bienvenido</h1>'
-    )
-})
-*/
-// app.use('/',tipoRoutes);
-// app.use('/',usuarioRoutes);
-// app.use('/',ventaRoutes);
+
 app.use('/',pastelRoutes);
 module.exports=app;
